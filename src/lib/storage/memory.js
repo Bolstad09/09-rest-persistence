@@ -10,11 +10,11 @@ storage.getAll = () => {
 
 storage.get = (id) => {
   return new Promise((resolve, reject) => {
-    if (database[id]) { 
-      resolve(database[id]); 
+    if (database[id]) {
+      resolve(database[id]);
     }
-    else { 
-      reject(`${id} not found`); 
+    else {
+      reject(`${id} not found`);
     }
   });
 };
@@ -26,7 +26,7 @@ storage.save = (data) => {
       resolve(database[data.id]);
     }
     else {
-      reject('Invalid Data (No ID)');
+      reject('Missing ID');
     }
   });
 };
@@ -35,10 +35,14 @@ storage.delete = (id) => {
   return new Promise((resolve, reject) => {
     if (database[id]) {
       delete database[id];
-      resolve('deleted');
+      resolve('Deleted');
     }
     else {
-      reject(`${id} not found`);
+      console.log('Rejected');
+      reject(`${id} missing`);
     }
   });
 };
+
+
+

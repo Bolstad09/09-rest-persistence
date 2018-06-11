@@ -5,7 +5,8 @@ const fileStorage = require('./filesystem.js');
 
 let dataStorageModule = {};
 
-switch (process.env.STORAGE) {
+
+switch( process.env.STORAGE ) {
 case 'filesystem':
   dataStorageModule = fileStorage;
   break;

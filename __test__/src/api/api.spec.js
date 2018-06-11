@@ -1,3 +1,4 @@
+
 'use strict';
 
 const superagent = require('superagent');
@@ -54,7 +55,7 @@ describe('app', () => {
   });
 
   it('should respond with body content', () => {
-    let object = {'title':'one title', 'name': 'one name', 'content': 'such content'};
+    let object = {'title':'one title', 'content': 'such content'};
     return superagent
       .post('http://localhost:3003/api/v1/notes')
       .send(object)
