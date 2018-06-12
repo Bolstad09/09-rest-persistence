@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "![cf](https://i.imgur.com/7v5ASc8.png) Lab 09: Vanilla REST API w/ Persistence",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "watch": "nodemon index.js",
+    "test-watch": "jest --watchAll",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^5.0.1",
+    "jest": "^22.4.4",
+    "node": "^10.4.0",
+    "superagent": "^3.8.3",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bolstad09/09-rest-persistence.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bolstad09/09-rest-persistence/issues"
+  },
+  "homepage": "https://github.com/Bolstad09/09-rest-persistence#readme"
+}
