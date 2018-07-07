@@ -27,7 +27,7 @@ router.route = (req, res) => {
       }
     })
     .catch(err => {
-      console.error('NOT_FOUND', req.parsed.pathname, err);
+      // console.error('NOT_FOUND', req.parsed.pathname, err);
       res.statusCode = 400;
       res.statusMessage = 'Bad Request';
       res.write('Bad Request');
