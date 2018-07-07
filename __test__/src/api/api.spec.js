@@ -1,4 +1,3 @@
-
 'use strict';
 
 const superagent = require('superagent');
@@ -13,16 +12,16 @@ describe('app', () => {
     app.stop();
   });
 
-  it('should return 404 for routes with missing id', () => {
+  it('should return 404 for routes with not found id', () => {
     return superagent
       .get('http://localhost:3003/api/v1/notes?id=123')
       .catch(err => {
-        expect(err.response.text).toBe('Missing');
+        expect(err.response.text).toBe('Not Found');
         expect(err.status).toBe(404);
       });
   });
 
-  it('should return 400 bad request when no id provided', () => {
+  it('should return 400 bad request when no id was provided', () => {
     return superagent
       .get('http://localhost:3003/api/v1/notes')
       .catch(err => {
@@ -31,8 +30,10 @@ describe('app', () => {
       });
   });
 
-  it('should return 200 and contain response body for request made with correct id', () => {
-    let object = {'title':'testing'};
+
+
+  it('should return 200 and contain response body for request made with valid id', () => {
+    let object = {'title':'sldkjfoei'};
     return superagent
       .post('http://localhost:3003/api/v1/notes')
       .send(object)
@@ -45,7 +46,7 @@ describe('app', () => {
       });
   });
 
-  it('should return 400 bad request when there is missing or no body content', () => {
+  it('should return 400 bad request when there is no body content or invalid body content', () => {
     return superagent
       .post('http://localhost:3003/api/v1/notes')
       .catch(err => {
@@ -54,8 +55,8 @@ describe('app', () => {
       });
   });
 
-  it('should respond with body content', () => {
-    let object = {'title':'one title', 'content': 'such content'};
+  it('should  respond with the body content', () => {
+    let object = {'title':'one title', 'name': 'one name', 'content': 'such content'};
     return superagent
       .post('http://localhost:3003/api/v1/notes')
       .send(object)
@@ -63,4 +64,5 @@ describe('app', () => {
         expect(data.body.content).toBe('such content');
       });
   });
+
 });

@@ -9,7 +9,7 @@ storage.getAll = () => {
 };
 
 storage.get = (id) => {
-  return new Promise((resolve, reject) => {
+  return new Promise( (resolve,reject) => {
     if (database[id]) {
       resolve(database[id]);
     }
@@ -20,13 +20,13 @@ storage.get = (id) => {
 };
 
 storage.save = (data) => {
-  return new Promise((resolve, reject) => {
+  return new Promise( (resolve,reject) => {
     if (data.id) {
       database[data.id] = data;
       resolve(database[data.id]);
     }
     else {
-      reject('Missing ID');
+      reject('Invalid Data (No ID)');
     }
   });
 };
@@ -35,14 +35,11 @@ storage.delete = (id) => {
   return new Promise((resolve, reject) => {
     if (database[id]) {
       delete database[id];
-      resolve('Deleted');
+      resolve('successfully deleted');
     }
     else {
-      console.log('Rejected');
-      reject(`${id} missing`);
+      console.log('this is being rejected');
+      reject(`${id} not found`);
     }
   });
 };
-
-
-

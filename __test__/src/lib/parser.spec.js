@@ -38,5 +38,4 @@ describe('URL Parser', () => {
       })
       .catch( console.error );
   });
-
 });
