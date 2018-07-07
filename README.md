@@ -1,9 +1,8 @@
-
+[![Build Status](https://travis-ci.com/Bolstad09/09-rest-persistence.svg?branch=brittany)](https://travis-ci.com/Bolstad09/09-rest-persistence)
 
 ##LINKS:
 * Heroku: https://git.heroku.com/rest-persistence-09.git
-* Travis: [![Build Status](https://travis-ci.com/Bolstad09/09-rest-persistence.svg?branch=master)](https://travis-ci.com/Bolstad09/09-rest-persistence)
-
+* Travis: https://travis-ci.com/Bolstad09/09-rest-persistence.svg?branch=brittany
 
 ##TESTS
 
